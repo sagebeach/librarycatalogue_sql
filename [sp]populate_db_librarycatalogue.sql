@@ -1,10 +1,19 @@
-CREATE DATABASE db_librarycatalogue
-USE db_librarycatalogue
+/* This is a database project for my studies with the Tech Academy. They asked me to create and populate a library database, then to create stored procedures to run specified queries against several tables. ~BeachTheSage*/
 
+USE [db_librarycatalogue]
+GO
+/****** Object:  StoredProcedure [dbo].[populate_db_librarycatalogue]    Script Date: 12/8/2017 3:45:00 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 /*=============================================
 		Create Tables in Heirarchical Order
 =============================================*/
 
+CREATE PROCEDURE populate_db_librarycatalogue
+AS
+BEGIN
 
 CREATE TABLE publisher (
 	Name VARCHAR(50) PRIMARY KEY NOT NULL,
@@ -173,9 +182,10 @@ INSERT INTO book_copies
 		(19, 2, 5),
 		(19, 4, 5),
 		(20, 2, 6),
-		(20, 4, 6)
+		(20, 4, 6),
+		(21, 2, 4)
 	;
-	SELECT * FROM BOOK_COPIES;
+	SELECT * FROM book_copies;
 
 INSERT INTO borrower
 		(Name, Address, Phone)
@@ -246,7 +256,6 @@ INSERT INTO book_loans
 		(19, 4, 1050, '2017-11-25', '2017-12-15')
 ;
 	SELECT * FROM book_loans;
-/*=============================================
-		Query tables for specified data.
-=============================================*/
+END
 
+GO
