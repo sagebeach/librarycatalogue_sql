@@ -9,3 +9,5 @@
  *[sp]script_catalogue_queries.sql: creates several stored procedures to run queries against the database.
 
  *db_librarycatalogue_masterscript.sql: Master list to execute all previous scripts. _must execute scripts specified in each file in the linear order specified in this master list._
+
+*Demonstration purposes, it would take me days to manually enter all my bookshelves into this database
